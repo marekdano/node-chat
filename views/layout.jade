@@ -2,12 +2,15 @@ doctype 5
 html
   head
     title= title
+    script(src='/components/bootstrap/dist/js/bootstrap.js')
     link(rel='stylesheet', href='/css/style.css')
     link(rel='shortcut icon', href='/components/bootstrap/assets/ico/favicon.png')
     link(rel='stylesheet', href='/components/bootstrap/dist/css/bootstrap.css')
     script(src='http://localhost:35729/livereload.js')
+    script(src='/socket.io/socket.io.js')
+    script(src='/components/jquery/dist/jquery.js')
+  
   body
     block content
 
-    script(src='/components/jquery/dist/jquery.js')
-    script(src='/components/bootstrap/dist/js/bootstrap.js')
+    
