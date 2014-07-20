@@ -1,28 +1,47 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
-  
-  ul#messages
-  form(action="", method="get")
-    input#m (autocomplete="off")
-    button Send
+	div.container
+		div.row
+			div(class="col-md-2 col-sm-1") 
+			div(class="col-md-6 col-sm-9")
+				div.row
+					div.col-md-2
+					div.col-md-8
+						div.icon-wrapper
+							i(class="fa fa-cloud icon-large")
+						h3#main-title Simple Node Chat
+					div.col-md-2
 
-  script(type='text/javascript').
-      var foo = false
-      if (foo) {
-         bar(1 + 5)
-      }
-      
-      console.log("I'm in the script.")
-      
-      var socket = io()
-      $('form').submit(function(){
-        socket.emit('chat message', $('#m').val())
-        $('#m').val('')
-        return false
-      })
-      socket.on('chat message', function(msg){
-        $('#messages').append($('<li>').text(msg))
-      })
+				p Simple web chat application created on node.js technology. Create a room to begin chatting.
+				
+				div.input-group
+					input(type="text", class="form-control", id="room", placeholder="Room...")
+					span.input-group-btn
+						button(class="btn btn-success", type="button")	Create
+
+				div.row
+					div(class="col-md-12")
+						div#join-input
+							div.input-group
+								input(type="text", class="form-control", id="usernameInput", placeholder="Your name")
+								span.input-group-btn
+									button(class="btn btn-success", type="button", name="join", id="join")	Join
+
+									
+						div#chatbox
+							div#messages
+
+							label(class="sr-only", for="inputMessage") Type message...
+							input(id="inputMessage", type="text", class="form-control", placeholder="")
+
+			div.col-md-1
+			div(class="col-md-3 col-sm-2")
+				
+				div#sidebar
+				
+				//
+					h1= title
+					p Welcome to #{title}
+					p Hi welcome here   
+					p#messages
