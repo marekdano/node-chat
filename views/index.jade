@@ -3,25 +3,23 @@ extends layout
 block content
 	div.container
 		div.row
-			div(class="col-md-2 col-sm-1") 
-			div(class="col-md-6 col-sm-9")
+			div(class="col-md-6 col-md-offset-2 col-sm-9")
 				div.row
-					div.col-md-2
-					div.col-md-8
+					div(class="col-md-8 col-md-offset-2")
 						div.icon-wrapper
 							i(class="fa fa-cloud icon-large")
 						h3#main-title Simple Node Chat
 					div.col-md-2
 
-				p Simple web chat application created on node.js technology. Create a room to begin chatting.
+				h5 Simple web chat application created on node.js technology. Create a room or join to begin chatting now.
 				
-				div.input-group
+				div(class="input-group", id="createbox")
 					input(type="text", class="form-control", id="room", placeholder="Room...")
 					span.input-group-btn
-						button(class="btn btn-success", type="button")	Create
+						button(class="btn btn-success", type="button", name="create", id="create")	Create
 
 				div.row
-					div(class="col-md-12")
+					div(class="col-md-12 box", id="joinbox")
 						div#join-input
 							div.input-group
 								input(type="text", class="form-control", id="usernameInput", placeholder="Your name")
@@ -29,7 +27,7 @@ block content
 									button(class="btn btn-success", type="button", name="join", id="join")	Join
 
 									
-						div#chatbox
+						div(id="chatbox", class="box")
 							div#messages
 
 							label(class="sr-only", for="inputMessage") Type message...

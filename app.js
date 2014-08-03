@@ -1,13 +1,15 @@
 // This is the main file of the chat app. It initializes a new express.js instance, 
 // all dependencies and listens on the port. App can be started by running 
-// "node app.js" in the terminal or using grunt in terminal.
+// "node app.js" or grunt in terminal.
 
 var express = require('express'),
     http = require('http');
 
 /*
-// This the samples for using exports modules in the syntax "exports.name_of_module" 
-// which are not used in the app. This is for learning purpose.
+// This are samples for using exports modules in the syntax "exports.name_of_module" 
+// scaffolded from yeoman express generator. There are not used in this app. 
+// This is for purposes of learnig node app.
+// Required files are under router folder.
 var samples = require('./routes/sample.js'),
     user = require('./routes/user');
 */
@@ -17,6 +19,7 @@ var PORT =  process.env.PORT || 3030;
 var app = express(),
     server = http.Server(app);
 
+// setting up the express app using the JADE template engine
 app.configure(function (){
   app.set('port',PORT);
   app.set('views', __dirname + '/views');
@@ -33,7 +36,7 @@ app.configure('development', function(){
   app.use(express.errorHandler());
 });
 
-// Initialize a new socket.io object. It is bound to 
+// Initialize a new socket.io object. It is bounded to 
 // the express app, which allows them to coexist.
 var io = require('socket.io')(server);
 
@@ -45,6 +48,7 @@ app.get('/user', user.list);
 app.get('/try', samples.sendToExample);
 */
 
+// load the server side of the chat app
 require('./routes/chat-server')(app, io);
 
 server.listen(app.get('port'), function (){

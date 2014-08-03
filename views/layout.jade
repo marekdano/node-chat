@@ -1,18 +1,19 @@
 doctype 5
 html
-  head
-    title= title
-    script(src='/components/jquery/dist/jquery.js')
-    script(src='/components/bootstrap/dist/js/bootstrap.js')
-    link(rel='shortcut icon', href='/components/bootstrap/assets/ico/favicon.png')
-    link(rel='stylesheet', href='/components/bootstrap/dist/css/bootstrap.css')
-    link(rel='stylesheet', href='/components/font-awesome/css/font-awesome.min.css')
-    link(rel='stylesheet', href='/css/style.css')
-  
-  body
-    block content
+	head
+		title= title
+		script(src='/components/jquery/dist/jquery.js')
+		script(src='/components/jquery-ui/jquery-ui.js')
+		script(src='/components/bootstrap/dist/js/bootstrap.js')
+		link(rel="stylesheet", href="/components/jquery-ui/themes/smoothness/jquery-ui.css")
+		link(rel='shortcut icon', href='/components/bootstrap/assets/ico/favicon.png')
+		link(rel='stylesheet', href='/components/bootstrap/dist/css/bootstrap.css')
+		link(rel='stylesheet', href='/components/font-awesome/css/font-awesome.min.css')
+		link(rel='stylesheet', href='/css/style.css')
+	
+	body
+		block content
 
-
-    script(src='/components/underscore/underscore.js')
-    script(src='/js/chat-client.js')
-    script(src='/socket.io/socket.io.js')
+	script(src='/components/underscore/underscore.js')
+	script(src='/js/chat-client.js')
+	script(src='/socket.io/socket.io.js')
