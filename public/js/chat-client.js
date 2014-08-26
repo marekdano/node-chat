@@ -91,7 +91,7 @@ $(function() {
 	// when the ENTER key is pressed the code executes
 	$($inputMessage).keypress(function(event) {
 		if(event.keyCode == 13) {
-			socket.emit('chat message', $inputMessage.val());
+			socket.emit('chat message', $inputMessage.val(), createdRoom);
 	   		$inputMessage.val('');
 	   		$($inputMessage).attr({"placeholder" : usernameInput + " your message here..."});
 		}
@@ -119,7 +119,8 @@ $(function() {
 
 	// update the chat with a new message
 	socket.on('chat message', function(username, msg){
-		$('#messages').append('<div class="row message-box"><div class="col-md-3">' + username + '</div><div class="col-md-9"><p class="bubble">' + msg +'</p></div></div>');
+		$('#messages').append('<div class="row message-box"><div class="col-md-3">' + 
+							username + '</div><div class="col-md-9"><p class="bubble">' + msg +'</p></div></div>');
 	    //$('#messages').append($('<p class="bubble message-box">').text(username + "  " + msg));
 	});	
 
