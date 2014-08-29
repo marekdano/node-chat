@@ -100,9 +100,10 @@ module.exports = function(app, io) {
 	// when a user leaves the chat room  
 	socket.on("disconnect", function() {
 		// if a chat room is left before a person entered it
-		if (!typeof getPersonsInRoom(socket.room === 'undefined')) {
+		if (!(typeof getPersonsInRoom(socket.room) === 'undefined')) {
 			// get the person left the chat room
 			var personLeftRoom = getPersonsInRoom(socket.room)[socket.id];
+			console.log("Username: " + personLeftRoom + " left the room.");
 
 			// delete the person from the room if he/she left the room
 			deletePersonFromRoom(socket.room, socket.id);
@@ -115,7 +116,6 @@ module.exports = function(app, io) {
 
 			// the client leave the room, delete from the socket session
 			socket.leave(socket.room);
-			console.log("Username: " + personLeftRoom + " left the room.");
 		}
 	});  
   });

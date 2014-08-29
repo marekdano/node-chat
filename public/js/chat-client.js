@@ -21,7 +21,7 @@ $(function() {
 	var $sideBar = $('#sidebar'); // place for listing the online user's names
 	
 	
-	console.log($(location).attr('pathname'));
+	console.log("Path: " + $(location).attr('pathname'));
 	if($(location).attr('pathname') === "/") {
 		$joinbox.hide();
 	} else {
@@ -101,15 +101,14 @@ $(function() {
 	socket.on('create', function(url, message) {
 		$createbox.hide('blind', 500);
 		$joinbox.show('clip', 2000);
-		console.log(url);
+		console.log("URL: " + url);
 		if(message) {
 			$('#joinbox #join-input').before($('<p>').text(message));
 		}
 		
 		$('#joinbox #join-input').before($('<h5 id="chatUrl">').text(url)).before($('<p>')
-										 .text("Please invite somebody to chat with you using this address."));	
+								.text("Please invite somebody to chat with you using this address."));	
 	});
-	
 	
 	// update the chat box when a new user join or left chat room
 	socket.on('update', function(msg) {
@@ -121,20 +120,29 @@ $(function() {
 	socket.on('chat message', function(username, msg){
 		$('#messages').append('<div class="row message-box"><div class="col-md-3">' + 
 							username + '</div><div class="col-md-9"><p class="bubble">' + msg +'</p></div></div>');
-	    //$('#messages').append($('<p class="bubble message-box">').text(username + "  " + msg));
 	});	
 
 	// update the chat room with the number and names people who are online 
 	socket.on('update-chatPeople', function(chatPeople) {
-		console.log(chatPeople);
+		console.log("Chat people in this room: " + chatPeople);
+		// initialise the variables every time when the function is called 
 		var numberOfPeople = 0;
 		$($sideBar).empty();
+
+		var items = [];
 		$.each(chatPeople, function(key, value) {
-			$($sideBar).append($('<p>').text(chatPeople[key]));
+
+			if (numberOfPeople < 6) {
+				items.push('<a class="list-group-item">' + chatPeople[key] + '</a>');
+				//$($sideBar).append($('<p>').text(chatPeople[key]));
+			}	
 			++numberOfPeople;
 		});
 
-		$($sideBar).append($('<p>').text(numberOfPeople + " online"));
+		console.log(items);
+		$($sideBar).append( items.join('') );
+
+		$($sideBar).append($('<div class="well well-sm"><span>' + numberOfPeople + '</span> online </div>'));
 	});
 });  
 
