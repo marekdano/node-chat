@@ -107,7 +107,7 @@ $(function() {
 		}
 		
 		$('#joinbox #join-input').before($('<h5 id="chatUrl">').text(url)).before($('<p>')
-								.text("Please invite somebody to chat with you using this address."));	
+								.text("Please invite somebody to chat with you by sending him/her this address."));	
 	});
 	
 	// update the chat box when a new user join or left chat room
@@ -118,8 +118,8 @@ $(function() {
 
 	// update the chat with a new message
 	socket.on('chat message', function(username, msg){
-		$('#messages').append('<div class="row message-box"><div class="col-md-3">' + 
-							username + '</div><div class="col-md-9"><p class="bubble">' + msg +'</p></div></div>');
+		$('#messages').append('<div class="row message-box"><div class="col-md-2 col-sm-2 col-xs-2 username">' + 
+							username + '</div><div class="col-md-10 col-sm-10 col-xs-10"><p class="bubble">' + msg +'</p></div></div>');
 	});	
 
 	// update the chat room with the number and names people who are online 
@@ -144,6 +144,8 @@ $(function() {
 
 		$($sideBar).append($('<div class="well well-sm"><span>' + numberOfPeople + '</span> online </div>'));
 	});
+
+
 });  
 
       

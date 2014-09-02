@@ -21,7 +21,7 @@ div {
 }
 
 #join-input {
-	margin: 20px;
+	margin: 20px 20px 20px 0;
 }
 
 #sidebar {
@@ -35,7 +35,7 @@ div {
 	width: 140px;
 	height: 140px;
 	border-radius: 50%;
-	background-color: rgba(135, 182, 178, 0.4);
+	background-color: #87B6B2;
 	text-align: center;
 	margin: 2em auto 0;
 	padding: 2.5em 0;
@@ -69,6 +69,19 @@ p {
 	margin: 10px 0;
 }
 
+span {
+    font-size: large;
+    padding: 0 3px;
+}
+
+.username {
+	text-align: center;
+	font-size: 1.3em; 
+	padding: 1.3em 0;
+	font-family: sans-serif;
+	font-style: italic;
+}
+
 h5#chatUrl {
     text-align: center;
     font-weight: bold;
@@ -81,7 +94,7 @@ h5#chatUrl {
 	/*width: 356px;
 	height: 86px; */
 	padding: 20px;
-	background: #ADB400;
+	background: #87B6B2;
 	/* border: #000000 solid 1px; */
 	-webkit-border-radius: 14px;
 	-moz-border-radius: 14px;
@@ -111,7 +124,7 @@ h5#chatUrl {
 	left: -18px;
 	border-style: solid;
 	border-width: 10px 17px 10px 0;
-	border-color: transparent #ADB400;
+	border-color: transparent #87B6B2;
 	display: block;
 	width: 0;
 	z-index: 0;
