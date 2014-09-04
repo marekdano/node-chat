@@ -13,11 +13,15 @@ block content
 
 				h5 Simple web chat application created on node.js technology. Create a room or join the existing room (the room link that was sent to you) to begin chatting now.
 				
+				if path
+					p yes
+
 				div(class="input-group", id="createbox")
 					input(type="text", class="form-control", id="room", placeholder="Room...")
 					span.input-group-btn
 						button(class="btn btn-success", type="button", name="create", id="create")	Create
 
+						
 				div.row
 					div(class="col-md-12 box", id="joinbox")
 						div#join-input
@@ -33,8 +37,7 @@ block content
 							label(class="sr-only", for="inputMessage") Type message...
 							input(id="inputMessage", type="text", class="form-control", placeholder="")
 
-			div.col-md-1
-			div(class="col-md-3 col-sm-2")
+			div(class="col-md-3 col-md-offset-1 col-sm-3")
 				
 				div#sidebar
 				

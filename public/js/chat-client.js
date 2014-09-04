@@ -22,6 +22,7 @@ $(function() {
 	
 	
 	console.log("Path: " + $(location).attr('pathname'));
+	var path = $(location).attr('pathname');
 	if($(location).attr('pathname') === "/") {
 		$joinbox.hide();
 	} else {
@@ -83,7 +84,7 @@ $(function() {
 			$inputMessage.focus();
 			$joinInput.hide(2000);
 			console.log("Username: " + usernameInput);
-			$($inputMessage).attr({"placeholder" : usernameInput + " your message here..."});
+			$($inputMessage).attr({"placeholder" : usernameInput + "..."});
 		}
 	});
 	
@@ -93,7 +94,7 @@ $(function() {
 		if(event.keyCode == 13) {
 			socket.emit('chat message', $inputMessage.val(), createdRoom);
 	   		$inputMessage.val('');
-	   		$($inputMessage).attr({"placeholder" : usernameInput + " your message here..."});
+	   		$($inputMessage).attr({"placeholder" : usernameInput + "..."});
 		}
 	});
 	
@@ -113,7 +114,7 @@ $(function() {
 	// update the chat box when a new user join or left chat room
 	socket.on('update', function(msg) {
 		$('#messages').append($('<h4 class="message-box">').text(msg));
-		$($inputMessage).attr({"placeholder" : usernameInput + " your message here..."});	
+		$($inputMessage).attr({"placeholder" : usernameInput + "..."});	
 	}); 
 
 	// update the chat with a new message
