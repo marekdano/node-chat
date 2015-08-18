@@ -30,7 +30,7 @@ $(function() {
 		$joinbox.show();
 	}
 	
-	// hide the conversation of the chat room before singing into a chat room
+	// hide the conversation of the chat room before singing into it
 	$chatbox.hide();
 	
 	// create a chat room when ENTER key is hit
