@@ -159,14 +159,14 @@ module.exports = function(app, io) {
 
 
   app.get('/', function(req, res) {
-	res.render('index', { roomInPath: false });
+	res.render('index');
   });
 	
 
   app.get('/:roomName', function(req, res) {
 	roomUrl = req.url.slice(1);
 	if (containsRoom(roomUrl)) {
-		res.render('index', {roomInPath: true });
+		res.render('index');
 	} else {
 		res.send("This room doesn't exist. Please try this address " + "\"" + req.get('host') + "\"");
 	}

@@ -22,7 +22,6 @@ $(function() {
 	
 	
 	console.log("Path: " + $(location).attr('pathname'));
-	var path = $(location).attr('pathname');
 	if($(location).attr('pathname') === "/") {
 		$joinbox.hide();
 	} else {
@@ -30,11 +29,11 @@ $(function() {
 		$joinbox.show();
 	}
 	
-	// hide the conversation of the chat room before singing into a chat room
+	// hide the conversation of the chat room before signing into a chat room
 	$chatbox.hide();
 	
 	// create a chat room when ENTER key is hit
-	$($chatRoomInput).keypress(function () {
+	$($chatRoomInput).keypress(function (event) {
 		if(event.which == 13) {
 			$($createChat).click();
 		}
