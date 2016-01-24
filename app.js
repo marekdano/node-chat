@@ -3,7 +3,8 @@
 // "node app.js" or grunt in terminal.
 
 var express = require('express'),
-    http = require('http');
+    http = require('http'),
+    path = require('path');
 
 /*
 // This are samples for using exports modules in the syntax "exports.name_of_module" 
