@@ -7,6 +7,9 @@
     "components"
   ],
   "dependencies": {
-    "jquery-ui": "~1.11.0"
+    "jquery-ui": "~1.11.0",
+    "bootstrap": "^3.3.6",
+    "underscore": "^1.8.3",
+    "font-awesome": "^4.5.0"
   }
 }
