@@ -1,43 +1,34 @@
 extends layout
 
 block content
-	div.container
-		div.row
-			div(class="col-md-6 col-md-offset-2 col-sm-9")
-				div.row
-					div(class="col-md-8 col-md-offset-2")
-						div.icon-wrapper
-							i(class="fa fa-cloud icon-large")
-						h3#main-title Simple Node Chat
-					div.col-md-2
+	div.container		
+		div.icon-wrapper
+			i(class="fa fa-cloud icon-large")
+		h3#main-title Simple Node Chat
 
-				h5 Simple web chat application created on node.js technology. Create a room or join the existing room (the room link that was sent to you) to begin chatting now.
-				
-				div(class="input-group", id="createbox")
-					input(type="text", class="form-control", id="room", placeholder="Room...")
-					span.input-group-btn
-						button(class="btn btn-success", type="button", name="create", id="create")	Create
+		h5 Simple web chat application created on node.js technology. Create a room or join the existing room (the room link that was sent to you) to begin chatting now.
 		
-				div.row
-					div(class="col-md-12 box", id="joinbox")
-						div#join-input
-							div.input-group
-								input(type="text", class="form-control", id="usernameInput", placeholder="Your name")
-								span.input-group-btn
-									button(class="btn btn-success", type="button", name="join", id="join")	Join
-			
-						div(id="chatbox", class="box")
-							div#messages
+		div(class="input-group", id="createbox")
+			input(type="text", class="form-control", id="room", placeholder="Room...", autofocus)
+			span.input-group-btn
+				button(class="btn btn-success", type="button", name="create", id="create")	Create
 
-							label(class="sr-only", for="inputMessage") Type message...
-							input(id="inputMessage", type="text", class="form-control", placeholder="")
+		div(id="joinbox")
+			div#join-input
+				div.input-group
+					input(type="text", class="form-control", id="usernameInput", placeholder="Your name", autofocus)
+					span.input-group-btn
+						button(class="btn btn-success", type="button", name="join", id="join")	Join
+	
+			div(id="chatbox", class="box")
+				div#messages
+					label(class="sr-only", for="inputMessage") Type message...
+					input(id="inputMessage", type="text", class="form-control", placeholder="")
 
-			div(class="col-md-3 col-md-offset-1 col-sm-3")
-				
-				div#sidebar
-				
-				//
-					h1= title
-					p Welcome to #{title}
-					p Hi welcome here   
-					p#messages
+	div#sidebar
+		
+		//
+			h1= title
+			p Welcome to #{title}
+			p Hi welcome here   
+			p#messages

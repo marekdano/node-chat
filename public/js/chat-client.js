@@ -116,7 +116,7 @@ $(function() {
 
 	// update the chat with a new message
 	socket.on('chat message', function(username, msg){
-		$('#messages').append('<div class="row message-box"><div class="col-md-2 col-sm-2 col-xs-2 username">' + 
+		$('#messages').append('<div class="row message-box"><div class="col-md-2 col-sm-2 col-xs-2 username"><img src="../images/image.png" class="avatar"/>' + 
 							username + '</div><div class="col-md-10 col-sm-10 col-xs-10"><p class="bubble">' + msg +'</p></div></div>');
 	});	
 
