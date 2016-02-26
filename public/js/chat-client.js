@@ -22,12 +22,10 @@ $(function() {
 	
 	
 	console.log("Path: " + $(location).attr('pathname'));
-	if($(location).attr('pathname') === "/") {
-		$joinbox.hide();
-	} else {
+	if(!($(location).attr('pathname') === "/")) {
 		$createbox.hide();
 		$joinbox.show();
-	}
+	} 
 	
 	// hide the conversation of the chat room before singing into it
 	$chatbox.hide();

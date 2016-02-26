@@ -15,6 +15,10 @@ div {
 	margin-bottom: 10px;
 }
 
+#joinbox {
+  display: none;
+}
+
 #joinbox > p {
 	text-align: center;
 	font-size: 1.1em;
